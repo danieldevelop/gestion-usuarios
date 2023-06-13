@@ -27,9 +27,9 @@ const Home = () => {
                 <table className="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Teléfono</th>
+                            <th>Nombres</th>
+                            <th>Emails</th>
+                            <th>Teléfonos</th>
                         </tr>
                     </thead>
                     <tbody>
