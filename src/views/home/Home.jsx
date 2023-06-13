@@ -19,19 +19,34 @@ const Home = () => {
 
     return (
         <div>
-            <p>Estamos en la home</p>
+            <div className="container">
+                <h2 className="text-center mt-3">Usuarios</h2>
+            </div>
 
-            {
-                allUsers.map((user) => {
-                    return (
-                        <div key={user.id}>
-                            <p>{user.name}</p>
-                            <p>{user.email}</p>
-                            <p>{user.phone}</p>
-                        </div>
-                    )
-                })
-            }
+            <div className="container">
+                <table className="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            allUsers?.map((user) => {
+                                return (
+                                    <tr key={user.id}>
+                                        <td>{user.name}</td>
+                                        <td>{user.email}</td>
+                                        <td>{user.phone}</td>
+                                    </tr>
+                                );
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
 
             <Link to='/' className='btn btn-primary btn-lg btn-block'>Volver</Link>
         </div>
