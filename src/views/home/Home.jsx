@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+import Navbar from "../../components/navbar/Navbar";
+import ListarUsuarios from "../users/ListarUsuarios";
 
 const Home = () => {
     const [allUsers, setAllUsers] = useState([]);
@@ -19,37 +21,13 @@ const Home = () => {
 
     return (
         <div>
-            <div className="container">
-                <h2 className="text-center mt-3">Usuarios</h2>
-            </div>
+            <Navbar />
 
             <div className="container">
-                <table className="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Nombres</th>
-                            <th>Emails</th>
-                            <th>Teléfonos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            allUsers?.map((user) => {
-                                return (
-                                    <tr key={user.id}>
-                                        <tr>{user.id}</tr>
-                                        <td>{user.name}</td>
-                                        <td>{user.email}</td>
-                                        <td>{user.phone}</td>
-                                    </tr>
-                                );
-                            })
-                        }
-                    </tbody>
-                </table>
-            </div>
+                <h2 className="mt-4 ml-4 mb-4 h3 fw-normal">Mis Usuarios</h2>
 
-            <Link to='/' className='btn btn-primary btn-lg btn-block'>Volver</Link>
+                <ListarUsuarios allUsers={allUsers} />
+            </div>
         </div>
     )
 };

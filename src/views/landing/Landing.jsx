@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
     return (
-        <section className="mt-3">
+        <div className="m-5">
             <div className="container">
-                <h1 className='text-center'>Gestiona tu usuarios, sin rodeos</h1>
-                <p className='text-center'>Con esta aplicación podrás gestionar tus usuarios de forma sencilla y rápida.</p>
+                <h1 className='text-center' style={{"color": "#3F3F3F"}}>¡Bienvenido!</h1>
+                <p className='text-center'>Gestor de usuarios...</p>
 
-                <Link to='/home' className='btn btn-primary btn-lg btn-block'>Ingresa</Link>
+                <div className="text-center">
+                    <Link to='/home' className='btn btn-outline-primary btn-sm mt-2 text-uppercase fw-semibold'>
+                        Ingresar al sistema
+                    </Link>
+                </div>
             </div>
-        </section>
+        </div>
     )
 };
 
